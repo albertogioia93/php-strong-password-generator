@@ -9,19 +9,20 @@
 
 <body>
 
-    <!-- MILESTONE 1: L'UTENTE SCEGLIE QUANTO DEVE ESSERE LUNGA LA SUA PASSWORD E DOPO AVER CLICCATO IL BUTTON, VIENE GENERATA GRAZIE AD UNA FUNZIONE CREATA DA ME -->
-
     <h1>STRONG PASSWORD GENERATOR</h1>
     <h2>Genera una password sicura</h2>
 
     <?php
-        // Nella funzione generate_password, viene creata una stringa di caratteri contenente lettere (maiuscole e minuscole), numeri e simboli speciali.
-        function generate_password($length) {
-            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
-            // Usando la funzione str_shuffle, viene mischiata la stringa di caratteri in modo casuale e viene estratta la sottostringa di lunghezza specificata dall'utente in input type=number.
-            $password = substr(str_shuffle($chars), 0, $length);
-            return $password;
-        }
+        // // Nella funzione generate_password, viene creata una stringa di caratteri contenente lettere (maiuscole e minuscole), numeri e simboli speciali.
+        // function generate_password($length) {
+        //     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+        //     // Usando la funzione str_shuffle, viene mischiata la stringa di caratteri in modo casuale e viene estratta la sottostringa di lunghezza specificata dall'utente in input type=number.
+        //     $password = substr(str_shuffle($chars), 0, $length);
+        //     return $password;
+        // }
+
+        // La logica per generare la password viene spostata nel file functions.php, che viene incluso in questa pagina principale tramite la funzione 'include'.
+        include 'functions.php';
 
         if (isset($_GET['length'])) {
             $length = $_GET['length'];
