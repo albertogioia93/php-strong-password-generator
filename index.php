@@ -9,9 +9,11 @@
 
 <body>
 
+    <!-- MILESTONE 1: L'UTENTE SCEGLIE QUANTO DEVE ESSERE LUNGA LA SUA PASSWORD E DOPO AVER CLICCATO IL BUTTON, VIENE GENERATA GRAZIE AD UNA FUNZIONE CREATA DA ME -->
+
     <h1>STRONG PASSWORD GENERATOR</h1>
     <h2>Genera una password sicura</h2>
-    
+
     <?php
         // Nella funzione generate_password, viene creata una stringa di caratteri contenente lettere (maiuscole e minuscole), numeri e simboli speciali.
         function generate_password($length) {
