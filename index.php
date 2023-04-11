@@ -22,13 +22,23 @@
         // }
 
         // La logica per generare la password viene spostata nel file functions.php, che viene incluso in questa pagina principale tramite la funzione 'include'.
-        include 'functions.php';
+        // include 'functions.php';
 
+        // if (isset($_GET['length'])) {
+        //     $length = $_GET['length'];
+        //     $password = generate_password($length);
+        //     echo "<p>La tua password è: $password</p>";
+        // }
+
+        session_start(); // avvia la sessione
+        include 'functions.php';
         if (isset($_GET['length'])) {
             $length = $_GET['length'];
             $password = generate_password($length);
-            echo "<p>La tua password è: $password</p>";
-        }
+            $_SESSION['password'] = $password; // salva la password nella sessione
+            header('Location: password.php'); // effettua un redirect alla pagina password.php
+            exit();
+        }        
     ?>
 
     <!-- Quando l'utente invia il modulo, la variabile length viene inviata in GET all'url di index.php. -->
